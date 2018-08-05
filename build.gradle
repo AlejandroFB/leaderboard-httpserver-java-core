@@ -1,0 +1,27 @@
+group 'com.alejandro.game'
+version '1.0'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = 'leaderboard'
+    version = 'v1.0'
+}
+
+jar {
+    manifest {
+        attributes("Implementation-Title": "Alejandro",
+                   "Implementation-Version": version,
+                   "Main-Class": "com.alejandro.game.ApplicationLeaderboard")
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+    testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.2'
+}
